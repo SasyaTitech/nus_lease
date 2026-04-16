@@ -96,9 +96,16 @@ body::before {
 .hero h1 {
   margin: 0 0 12px;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 0.92;
+  font-size: clamp(2.3rem, 4.4vw, 4.2rem);
+  line-height: 0.96;
   font-weight: 400;
+}
+
+.hero-tagline {
+  margin: 0 0 14px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: rgba(237, 246, 245, 0.9);
+  letter-spacing: 0.01em;
 }
 
 .hero-text {
@@ -128,6 +135,12 @@ body::before {
   color: #9af2dc;
 }
 
+.hero-prompt {
+  margin: 0;
+  color: #ffd39d;
+  font-size: 0.92rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -139,24 +152,34 @@ body::before {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0 16px;
+  gap: 10px;
+  padding: 0 18px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text);
   text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  font-weight: 600;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
 .hero-link:hover {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
 }
 
 .hero-link.primary {
-  background: linear-gradient(135deg, rgba(102, 224, 194, 0.24), rgba(255, 178, 106, 0.22));
-  border-color: rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, rgba(102, 224, 194, 0.34), rgba(255, 178, 106, 0.3));
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #06131b;
+}
+
+.hero-link svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
 }
 
 .hero-metrics {

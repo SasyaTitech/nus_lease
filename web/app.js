@@ -15,7 +15,7 @@ const MIN_CONDO_TRANSACTION_COUNT = 20;
 
 const CONDO_COPY = {
   hero:
-    "Condo 视图把市场挂牌和官方成交放在同一套画布里。按房型切换后，可以快速看到不同 district 的租金层级、价差和覆盖范围。",
+    "Condo 视图把区域分布、房型结构和租金层级放到同一页里。需要的时候，还可以继续比较挂牌价和官方成交价之间的偏离。",
   contextTitle: "District Choropleth",
   contextSubtitle:
     "基于公开矢量边界拼成 `D01-D28` 的 district proxy map，整块区域按当前主指标着色，编号点落在 district 标注位。",
@@ -30,7 +30,7 @@ const CONDO_COPY = {
 
 const CONDO_TX_ONLY_COPY = {
   hero:
-    "Condo 视图当前先展示官方成交租金。按房型切换后，可以直接比较不同 district 的租金层级和样本覆盖。",
+    "Condo 视图当前聚焦官方成交租金。按房型切换后，可以直接比较不同 district 的租金层级和样本覆盖。",
   contextTitle: "District Choropleth",
   contextSubtitle:
     "基于公开矢量边界拼成 `D01-D28` 的 district proxy map；低于 20 笔成交的 bucket 不参与聚合，区域默认按成交中位数着色。",
@@ -43,7 +43,7 @@ const CONDO_TX_ONLY_COPY = {
 
 const HDB_COPY = {
   hero:
-    "HDB 视图聚焦最近窗口内的官方租金数据。这里不比较价差，而是专注看各 town、各房型的租金层级与样本量。",
+    "HDB 视图聚焦最近窗口内的官方租金数据，更适合直接看各 town、各房型的租金层级与样本量。",
   contextTitle: "Town Treemap",
   contextSubtitle: "每个 town 的面积代表样本量，颜色代表最近窗口内的中位租金。",
   heatmapTitle: "HDB Heatmap",
@@ -523,13 +523,13 @@ function renderMetrics(cards) {
 function renderStatus(snapshot) {
   const status = document.getElementById("dataset-status");
   const isDemo = snapshot.meta?.mode === "demo" || snapshot._sourcePath.includes("demo");
-  const sourceName = isDemo ? "Demo snapshot" : "Live public snapshot";
+  const sourceName = isDemo ? "演示快照" : "公开实时快照";
   const generatedAt = snapshot.meta?.generated_at || "unknown";
   status.classList.toggle("is-demo", isDemo);
   status.innerHTML = `
     <span class="status-badge ${isDemo ? "is-demo" : "is-live"}">${isDemo ? "DEMO" : "LIVE"}</span>
     <strong>${sourceName}</strong><br />
-    updated ${generatedAt}
+    更新于 ${generatedAt}
   `;
 
   const listingAvailable = hasCondoListingData(snapshot);

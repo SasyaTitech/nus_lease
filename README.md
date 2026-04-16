@@ -1,88 +1,92 @@
 # Lion City Rent Atlas
 
-Public dashboard for reading Singapore rents by district, by town, and by flat type.
+面向公众的新加坡租金可视化项目，按区域、按房型看 `Condo` 与 `HDB` 的租金分布。
 
-Live site:
+[English README](README.en.md)
+
+在线访问：
 - https://sasyatitech.github.io/nus_lease/
 
-Repository:
+项目仓库：
 - https://github.com/SasyaTitech/nus_lease
 
-If this project is useful, please star the repo:
+如果这个项目对你有帮助，欢迎赏一颗 Star：
 - https://github.com/SasyaTitech/nus_lease
 
-Built and maintained by:
+作者：
 - Sasya / https://github.com/SasyaTitech
 
-`nus_lease` remains the internal package/repository name. `Lion City Rent Atlas` is the public-facing project name.
+`nus_lease` 仍然是仓库和 Python 包的内部名称，面向公开展示时使用 `Lion City Rent Atlas` 这个名字。
 
-## What You Can Explore
+## 这个网页能看什么
 
-The dashboard currently has two views:
+当前网页分成两个视图：
 
 - `Condo`
-  - District-level private rental prices
-  - Bedroom-bucket heatmaps
-  - District ranking and coverage
-  - When listing data is available, asking vs transaction comparisons
+  - 看私宅租金在不同 district 的分布
+  - 看不同房型的热力图
+  - 看各 district 的排序和覆盖情况
+  - 如果挂牌数据可用，还能看挂牌价和成交价的对比
 - `HDB`
-  - Town-level HDB rental view
-  - Flat-type heatmaps
-  - Town ranking based on official approvals
+  - 看各 town 的 HDB 租金分布
+  - 看不同 flat type 的热力图
+  - 看各 town 的官方租金排序
 
-The public site is designed for readers first: open it, switch between `Condo` and `HDB`, then narrow by bedroom bucket or flat type.
+最简单的使用方式就是：
 
-## Data Transparency
+1. 打开网页。
+2. 在 `Condo` 和 `HDB` 之间切换。
+3. 再按房型或房间数缩小范围。
 
-### Condo transactions
+## 数据公开说明
 
-Condo transaction data comes from URA's private residential rental contract data.
+### Condo 成交数据
 
-Official references:
-- URA rental search: https://eservice.ura.gov.sg/property-market-information/pmiResidentialRentalSearch
-- URA API portal: https://eservice.ura.gov.sg/maps/api/
+Condo 成交数据来自 `URA` 的私宅租约数据。
 
-What that means:
-- It is an official source for private residential rental contracts.
-- It covers private residential rentals submitted to `IRAS` for stamp duty assessment.
-- It does not cover `HDB`.
-- Bedroom counts are useful for `non-landed` records, but some records are still missing bedroom information.
-- Bathroom counts are not provided by URA.
+官方参考：
+- URA 租约查询页：https://eservice.ura.gov.sg/property-market-information/pmiResidentialRentalSearch
+- URA API 门户：https://eservice.ura.gov.sg/maps/api/
 
-### HDB rents
+这层数据的含义是：
+- 它是官方私宅租约来源。
+- 它覆盖提交给 `IRAS` 做印花税评估的私宅租赁合同。
+- 它不包含 `HDB`。
+- `non-landed` 记录通常带有 bedroom 信息，但仍有部分记录缺失。
+- `URA` 不提供 bathroom count。
 
-HDB data comes from the official open dataset for renting out flats.
+### HDB 数据
 
-Official source:
+HDB 数据来自官方开放数据集。
+
+官方来源：
 - https://data.gov.sg/datasets/d_c9f57187485a850908655db0e8cfe651/view
 
-What that means:
-- This is an official HDB rental-approval style dataset.
-- The dashboard aggregates recent records into `town x flat type`.
+这层数据的含义是：
+- 它是官方 HDB 租赁相关数据。
+- 网页里会把最近窗口内的数据聚合成 `town x flat type`。
 
-### Boundaries and map geometry
+### 地图边界说明
 
-The district map is not a perfect official postal-district polygon layer.
+网页上的 `D01-D28` 地图不是官方精确 postal district polygon。
 
-It is built from public URA planning-area boundaries and merged into a `D01-D28` proxy layer.
+它是基于公开的 `URA planning area` 边界，进一步合并出来的 district proxy layer，所以更适合做市场阅读和区域比较，而不是法律或测绘用途。
 
-Official boundary source:
+官方边界来源：
 - https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view
 
-So the map is good for market reading and comparison, but should not be treated as a legal cadastral boundary product.
+### 挂牌价说明
 
-### Asking rents
+代码仓库里保留了 `PropertyGuru` 挂牌价适配层，但公开网页不一定始终启用这一层。
 
-The codebase includes an optional PropertyGuru adapter for asking-rent snapshots, but the public site may not always expose this layer.
+原因很简单：
+- 挂牌价不是成交价
+- 挂牌页面可能会遇到反爬或挑战页
+- 挂牌覆盖稳定性天然不如官方成交口径
 
-That is because:
-- asking rents are not the same thing as closed deals
-- listing pages can be blocked by anti-bot systems
-- public listing coverage is inherently less stable than official contract data
+## 仓库里公开了什么
 
-## What Is Public In This Repo
-
-The public repository keeps only what the website needs to render:
+公开仓库只保留网页渲染所需要的内容：
 
 - `web/`
 - `data/processed/market_snapshot.json`
@@ -90,94 +94,93 @@ The public repository keeps only what the website needs to render:
 - `data/raw/planning_area_boundaries.geojson`
 - `data/raw/district_centroids.json`
 
-The repository is configured to ignore local raw exports such as:
+像下面这些本地原始导出不会默认进入仓库：
 
-- URA raw pulls
-- HDB raw pulls
-- PropertyGuru HTML exports
-- local caches and build junk
+- URA 原始拉取结果
+- HDB 原始拉取结果
+- PropertyGuru 浏览器导出的 HTML
+- 本地缓存和构建垃圾
 
-See:
+具体规则见：
 - [.gitignore](.gitignore)
 
-## Run Locally
+## 本地运行
 
 ```bash
 python3 -m pip install -e .
 python3 -m http.server 8000
 ```
 
-Then open:
+然后打开：
 
 - http://localhost:8000/web/
 
-## Generate Fresh Data
+## 如果你想自己生成新数据
 
-### 1. Fetch public boundary helpers
+### 1. 拉公开边界辅助数据
 
 ```bash
 python3 scripts/fetch_planning_area_boundaries.py
 python3 scripts/fetch_district_centroids.py
 ```
 
-### 2. Fetch URA condo transactions
+### 2. 拉 URA 的 Condo 成交数据
 
-First export your URA access key:
+先导出你自己的 `URA_ACCESS_KEY`：
 
 ```bash
 export URA_ACCESS_KEY='your-access-key'
 ```
 
-Then fetch recent condo rental contracts:
+然后抓最近窗口的私宅租约：
 
 ```bash
 python3 scripts/fetch_ura_private_rentals.py --months 6
 ```
 
-Output:
+输出：
 
 - `data/raw/ura_private_rentals.json`
 
-### 3. Fetch HDB rental data
+### 3. 拉 HDB 数据
 
 ```bash
 python3 scripts/fetch_hdb_rentals.py --months 3
 ```
 
-Output:
+输出：
 
 - `data/raw/hdb_rentals.json`
 
-### 4. Build the dashboard snapshot
+### 4. 生成网页快照
 
 ```bash
 python3 scripts/build_market_snapshot.py --hdb data/raw/hdb_rentals.json
 ```
 
-Outputs:
+输出：
 
 - `data/processed/market_snapshot.json`
-- `data/fixtures/demo_market_snapshot.json` if you separately build demo data
 
-## Optional: Asking-Rent Pipeline
+## 可选：挂牌价采集
 
-If you want to extend the project with asking-rent snapshots:
+如果你想扩展成带挂牌价的版本，可以继续走挂牌抓取管线。
 
-### Parse browser-exported listing HTML
+### 解析浏览器导出的挂牌 HTML
 
 ```bash
 python3 scripts/import_propertyguru_html.py
 ```
 
-Expected input directory:
+预期输入目录：
 
 - `data/raw/propertyguru_html/`
 
-Expected output:
+预期输出：
 
 - `data/raw/propertyguru_listings.json`
 
-### Attempt Playwright-based fetch
+### 尝试用 Playwright 直接抓取
 
 ```bash
 python3 -m playwright install chromium
@@ -185,27 +188,24 @@ python3 scripts/fetch_propertyguru_live.py \
   --url 'https://www.propertyguru.com.sg/apartment-condo-for-rent/in-singapore'
 ```
 
-This path may fail if the site returns a challenge page.
+如果站点返回 challenge page，这条路可能会失败。
 
-## Deploy
+## 部署
 
-This repo already includes a GitHub Pages workflow:
+仓库里已经带了 `GitHub Pages` 工作流：
 
 - [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
 
-By default it publishes:
+如果你 fork 这个项目，只需要把 Pages 的发布源设成 `GitHub Actions`，然后推到 `main` 即可。
 
-- `web/`
-- `data/processed/market_snapshot.json`
-- `data/fixtures/demo_market_snapshot.json`
-- `data/raw/planning_area_boundaries.geojson`
-- `data/raw/district_centroids.json`
+## 贡献
 
-If you fork the repo, enable `GitHub Pages` with `GitHub Actions` as the source and push to `main`.
+欢迎提交：
 
-## Contributing
+- 数据源建议
+- 地图边界修正
+- UI/交互改进
+- issue 和 PR
 
-Issues, data-source suggestions, geometry fixes, and UI improvements are welcome.
-
-If you found the project useful, a star helps a lot:
+如果这个项目对你有帮助，欢迎赏一颗 Star：
 - https://github.com/SasyaTitech/nus_lease
