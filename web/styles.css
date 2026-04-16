@@ -107,6 +107,58 @@ body::before {
   line-height: 1.6;
 }
 
+.hero-meta {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.hero-signature {
+  margin: 0;
+  color: rgba(237, 246, 245, 0.84);
+  font-size: 0.95rem;
+}
+
+.hero-signature a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-signature a:hover {
+  color: #9af2dc;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.hero-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-link.primary {
+  background: linear-gradient(135deg, rgba(102, 224, 194, 0.24), rgba(255, 178, 106, 0.22));
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

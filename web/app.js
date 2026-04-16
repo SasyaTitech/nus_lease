@@ -15,7 +15,7 @@ const MIN_CONDO_TRANSACTION_COUNT = 20;
 
 const CONDO_COPY = {
   hero:
-    "Condo 模式保留双口径：`PropertyGuru asking rents` 对比 `URA rental contracts`。默认先看成交中位数，价差和溢价只在 hover 与对比图里展开。",
+    "Condo 视图把市场挂牌和官方成交放在同一套画布里。按房型切换后，可以快速看到不同 district 的租金层级、价差和覆盖范围。",
   contextTitle: "District Choropleth",
   contextSubtitle:
     "基于公开矢量边界拼成 `D01-D28` 的 district proxy map，整块区域按当前主指标着色，编号点落在 district 标注位。",
@@ -30,7 +30,7 @@ const CONDO_COPY = {
 
 const CONDO_TX_ONLY_COPY = {
   hero:
-    "Condo 模式当前只接入 `URA rental contracts`。这是一层官方成交视图，先看 `district x 房型` 的真实租金分布；挂牌对比会等后续挂牌快照接入后再补上。",
+    "Condo 视图当前先展示官方成交租金。按房型切换后，可以直接比较不同 district 的租金层级和样本覆盖。",
   contextTitle: "District Choropleth",
   contextSubtitle:
     "基于公开矢量边界拼成 `D01-D28` 的 district proxy map；低于 20 笔成交的 bucket 不参与聚合，区域默认按成交中位数着色。",
@@ -43,7 +43,7 @@ const CONDO_TX_ONLY_COPY = {
 
 const HDB_COPY = {
   hero:
-    "HDB 模式只保留一个官方口径：最近几个月的 `HDB rental approvals`。这里不展示差价图，而是专注看 `town x flat type` 的租金与样本量。",
+    "HDB 视图聚焦最近窗口内的官方租金数据。这里不比较价差，而是专注看各 town、各房型的租金层级与样本量。",
   contextTitle: "Town Treemap",
   contextSubtitle: "每个 town 的面积代表样本量，颜色代表最近窗口内的中位租金。",
   heatmapTitle: "HDB Heatmap",
@@ -523,25 +523,24 @@ function renderMetrics(cards) {
 function renderStatus(snapshot) {
   const status = document.getElementById("dataset-status");
   const isDemo = snapshot.meta?.mode === "demo" || snapshot._sourcePath.includes("demo");
-  const sourceName = isDemo
-    ? "Demo fixture"
-    : "Processed live snapshot";
+  const sourceName = isDemo ? "Demo snapshot" : "Live public snapshot";
   const generatedAt = snapshot.meta?.generated_at || "unknown";
   status.classList.toggle("is-demo", isDemo);
   status.innerHTML = `
     <span class="status-badge ${isDemo ? "is-demo" : "is-live"}">${isDemo ? "DEMO" : "LIVE"}</span>
     <strong>${sourceName}</strong><br />
-    generated ${generatedAt}
+    updated ${generatedAt}
   `;
 
-  const notes = [...(snapshot.meta?.notes || [])];
-  const hasVectorMapNote = notes.some((note) => /district proxy|planning-area boundaries/i.test(note));
-  if (snapshot.meta?.transactions_meta?.source && !hasVectorMapNote) {
-    notes.push("The condo map panel uses a vector district proxy assembled from public URA boundary data rather than a raster reference image.");
-  }
-  if (snapshot.meta?.transactions_meta?.source && !hasCondoListingData(snapshot)) {
-    notes.push(`Condo transaction visuals suppress district x bucket cells below ${MIN_CONDO_TRANSACTION_COUNT} official contracts.`);
-  }
+  const listingAvailable = hasCondoListingData(snapshot);
+  const notes = [
+    "Condo 成交数据来自 URA 私宅租约申报；HDB 数据来自官方 rental approvals。",
+    listingAvailable
+      ? "挂牌价代表当前在线 asking rent，不等于已成交租金。"
+      : "当前公开站点先展示官方成交与官方 HDB 口径，挂牌侧会在后续补入。",
+    "Condo 地图基于公开 URA planning area 边界合并得到的 D01-D28 proxy，不是官方 postal district polygon。",
+    `为减少噪声，Condo 成交少于 ${MIN_CONDO_TRANSACTION_COUNT} 笔的格子会被隐藏。`,
+  ];
   document.getElementById("notes-list").innerHTML = notes.map((note) => `<li>${note}</li>`).join("");
 }
 
