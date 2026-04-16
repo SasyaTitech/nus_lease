@@ -15,4 +15,5 @@ data/raw/*
 !data/raw/district_centroids.json
 
 /image.png
-
+data/raw/ura_private_rentals_map.json
+data/processed/subzone_district_assignments.json

@@ -97,6 +97,7 @@ Then open:
 ```bash
 python3 scripts/fetch_planning_area_boundaries.py
 python3 scripts/fetch_district_centroids.py
+python3 scripts/fetch_subzone_boundaries.py
 ```
 
 ### 2. Fetch URA condo transactions
@@ -124,11 +125,14 @@ Output:
 
 ```bash
 python3 scripts/build_market_snapshot.py --hdb data/raw/hdb_rentals.json
+python3 scripts/build_district_boundaries.py
 ```
 
 Output:
 
 - `data/processed/market_snapshot.json`
+- `data/processed/district_boundaries.geojson`
+- `data/processed/district_label_points.json`
 
 ## Optional Asking-Rent Pipeline
 

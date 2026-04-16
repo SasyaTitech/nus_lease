@@ -3,6 +3,14 @@ const SNAPSHOT_SOURCES = [
   "../data/fixtures/demo_market_snapshot.json",
 ];
 
+const DISTRICT_BOUNDARY_SOURCES = [
+  "../data/processed/district_boundaries.geojson",
+];
+
+const DISTRICT_LABEL_POINT_SOURCES = [
+  "../data/processed/district_label_points.json",
+];
+
 const PLANNING_AREA_SOURCES = [
   "../data/raw/planning_area_boundaries.geojson",
 ];
@@ -18,7 +26,7 @@ const CONDO_COPY = {
     "Condo 视图把区域分布、房型结构和租金层级放到同一页里。需要的时候，还可以继续比较挂牌价和官方成交价之间的偏离。",
   contextTitle: "District Choropleth",
   contextSubtitle:
-    "基于公开矢量边界拼成 `D01-D28` 的 district proxy map，整块区域按当前主指标着色，编号点落在 district 标注位。",
+    "优先使用更细的 district polygon；整块区域按当前主指标着色，编号点落在对应 district 的标签位。",
   heatmapTitle: "Condo Heatmap",
   heatmapSubtitle:
     "按 `district x bedroom bucket` 展示当前筛选下的主指标，hover 里看挂牌、成交和溢价。",
@@ -33,7 +41,7 @@ const CONDO_TX_ONLY_COPY = {
     "Condo 视图当前聚焦官方成交租金。按房型切换后，可以直接比较不同 district 的租金层级和样本覆盖。",
   contextTitle: "District Choropleth",
   contextSubtitle:
-    "基于公开矢量边界拼成 `D01-D28` 的 district proxy map；低于 20 笔成交的 bucket 不参与聚合，区域默认按成交中位数着色。",
+    "优先使用更细的 district polygon；低于 20 笔成交的 bucket 不参与聚合，区域默认按成交中位数着色。",
   heatmapTitle: "Condo Heatmap",
   heatmapSubtitle:
     "按 `district x bedroom bucket` 展示当前筛选下的官方成交中位数与样本量；低于 20 笔成交的格子自动留空。",
@@ -538,7 +546,7 @@ function renderStatus(snapshot) {
     listingAvailable
       ? "挂牌价代表当前在线 asking rent，不等于已成交租金。"
       : "当前公开站点先展示官方成交与官方 HDB 口径，挂牌侧会在后续补入。",
-    "Condo 地图基于公开 URA planning area 边界合并得到的 D01-D28 proxy，不是官方 postal district polygon。",
+    "Condo 地图优先使用基于 subzone 和 URA 成交点生成的 district polygon；它更贴近市场分区，但仍不是官方 postal district polygon。",
     `为减少噪声，Condo 成交少于 ${MIN_CONDO_TRANSACTION_COUNT} 笔的格子会被隐藏。`,
   ];
   document.getElementById("notes-list").innerHTML = notes.map((note) => `<li>${note}</li>`).join("");
@@ -876,8 +884,8 @@ function buildCondoMapOption(districtGeoJSON, districtPoints, districtRows, metr
     .filter((row) => rowMap.has(row.district))
     .map((row) => {
       const coordinate =
-        districtLabelOverrides[row.district]
-        || pointFallbackMap.get(row.district)
+        pointFallbackMap.get(row.district)
+        || districtLabelOverrides[row.district]
         || (districtFeatureMap.get(row.district) ? featureCenter(districtFeatureMap.get(row.district)) : null);
       if (!coordinate) return null;
       return {
@@ -1183,13 +1191,13 @@ function animateIn() {
 }
 
 async function main() {
-  const [snapshot, planningAreaGeoJSON, districtPointsPayload] = await Promise.all([
-    loadFirstAvailable(SNAPSHOT_SOURCES),
-    loadOptional(PLANNING_AREA_SOURCES),
-    loadOptional(DISTRICT_POINT_SOURCES),
-  ]);
-  const districtPoints = districtPointsPayload?.records || [];
-  const districtGeoJSON = buildDistrictGeoJSON(planningAreaGeoJSON);
+  const snapshot = await loadFirstAvailable(SNAPSHOT_SOURCES);
+  const districtBoundaryGeoJSON = await loadOptional(DISTRICT_BOUNDARY_SOURCES);
+  const districtLabelPointsPayload = await loadOptional(DISTRICT_LABEL_POINT_SOURCES);
+  const planningAreaGeoJSON = districtBoundaryGeoJSON ? null : await loadOptional(PLANNING_AREA_SOURCES);
+  const districtPointsPayload = districtLabelPointsPayload ? null : await loadOptional(DISTRICT_POINT_SOURCES);
+  const districtPoints = districtLabelPointsPayload?.records || districtPointsPayload?.records || [];
+  const districtGeoJSON = districtBoundaryGeoJSON || buildDistrictGeoJSON(planningAreaGeoJSON);
   if (districtGeoJSON?.features?.length) {
     echarts.registerMap("sg-districts", districtGeoJSON);
   }

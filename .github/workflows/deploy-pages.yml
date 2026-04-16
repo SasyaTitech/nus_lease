@@ -36,6 +36,8 @@ jobs:
 
           cp -R web/. _site/web/
           cp data/processed/market_snapshot.json _site/data/processed/
+          cp data/processed/district_boundaries.geojson _site/data/processed/
+          cp data/processed/district_label_points.json _site/data/processed/
           cp data/fixtures/demo_market_snapshot.json _site/data/fixtures/
           cp data/raw/planning_area_boundaries.geojson _site/data/raw/
           cp data/raw/district_centroids.json _site/data/raw/

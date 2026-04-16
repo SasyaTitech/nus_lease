@@ -1,0 +1,172 @@
+{
+  "records": [
+    {
+      "district": "01",
+      "district_name": "Boat Quay / Raffles Place / Marina",
+      "longitude": 103.8474931710392,
+      "latitude": 1.2827414085498292
+    },
+    {
+      "district": "02",
+      "district_name": "Chinatown / Tanjong Pagar",
+      "longitude": 103.83947653214642,
+      "latitude": 1.2761801115418658
+    },
+    {
+      "district": "03",
+      "district_name": "Alexandra / Commonwealth",
+      "longitude": 103.82465098324415,
+      "latitude": 1.2868935970318816
+    },
+    {
+      "district": "04",
+      "district_name": "Harbourfront / Telok Blangah",
+      "longitude": 103.83847351525631,
+      "latitude": 1.2488225871175689
+    },
+    {
+      "district": "05",
+      "district_name": "Buona Vista / West Coast / Clementi New Town",
+      "longitude": 103.77251146138805,
+      "latitude": 1.297269752668082
+    },
+    {
+      "district": "06",
+      "district_name": "City Hall / Clarke Quay",
+      "longitude": 103.85020697106428,
+      "latitude": 1.2914401809436868
+    },
+    {
+      "district": "07",
+      "district_name": "Beach Road / Bugis / Rochor",
+      "longitude": 103.85646775789094,
+      "latitude": 1.2995461599454432
+    },
+    {
+      "district": "08",
+      "district_name": "Farrer Park / Serangoon Rd",
+      "longitude": 103.85403887912875,
+      "latitude": 1.312458200413986
+    },
+    {
+      "district": "09",
+      "district_name": "Orchard / River Valley",
+      "longitude": 103.83953316534893,
+      "latitude": 1.301044457393305
+    },
+    {
+      "district": "10",
+      "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+      "longitude": 103.80569554143585,
+      "latitude": 1.315339813187043
+    },
+    {
+      "district": "11",
+      "district_name": "Watten Estate / Novena / Thomson",
+      "longitude": 103.82366405903778,
+      "latitude": 1.3264656620277289
+    },
+    {
+      "district": "12",
+      "district_name": "Balestier / Toa Payoh / Serangoon",
+      "longitude": 103.85533083867413,
+      "latitude": 1.3242697013771523
+    },
+    {
+      "district": "13",
+      "district_name": "Macpherson / Potong Pasir",
+      "longitude": 103.8705162842403,
+      "latitude": 1.338845903519914
+    },
+    {
+      "district": "14",
+      "district_name": "Eunos / Geylang / Paya Lebar",
+      "longitude": 103.89163291970998,
+      "latitude": 1.3158080775186132
+    },
+    {
+      "district": "15",
+      "district_name": "East Coast / Marine Parade",
+      "longitude": 103.9085124617837,
+      "latitude": 1.3105165878609604
+    },
+    {
+      "district": "16",
+      "district_name": "Bedok / Upper East Coast",
+      "longitude": 103.94789818642649,
+      "latitude": 1.3268107227964483
+    },
+    {
+      "district": "17",
+      "district_name": "Changi Airport / Changi Village",
+      "longitude": 103.96662769029312,
+      "latitude": 1.3666593301957402
+    },
+    {
+      "district": "18",
+      "district_name": "Pasir Ris / Tampines",
+      "longitude": 103.94406504369081,
+      "latitude": 1.3696474335736055
+    },
+    {
+      "district": "19",
+      "district_name": "Hougang / Punggol / Sengkang",
+      "longitude": 103.87751190088689,
+      "latitude": 1.3630475505838922
+    },
+    {
+      "district": "20",
+      "district_name": "Ang Mo Kio / Bishan / Thomson",
+      "longitude": 103.8348192400427,
+      "latitude": 1.3616673806949633
+    },
+    {
+      "district": "21",
+      "district_name": "Clementi Park / Upper Bukit Timah",
+      "longitude": 103.77476172857777,
+      "latitude": 1.3381657808268363
+    },
+    {
+      "district": "22",
+      "district_name": "Boon Lay / Jurong / Tuas",
+      "longitude": 103.70505316001453,
+      "latitude": 1.3432584532553167
+    },
+    {
+      "district": "23",
+      "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+      "longitude": 103.76080344619706,
+      "latitude": 1.3683500605477512
+    },
+    {
+      "district": "24",
+      "district_name": "Lim Chu Kang / Tengah",
+      "longitude": 103.712569342884,
+      "latitude": 1.37791194786997
+    },
+    {
+      "district": "25",
+      "district_name": "Kranji / Woodgrove",
+      "longitude": 103.77815058910525,
+      "latitude": 1.4265193973690493
+    },
+    {
+      "district": "26",
+      "district_name": "Upper Thomson / Springleaf",
+      "longitude": 103.82783995931014,
+      "latitude": 1.393953649943282
+    },
+    {
+      "district": "27",
+      "district_name": "Yishun / Sembawang",
+      "longitude": 103.83169702248358,
+      "latitude": 1.4386472841604654
+    },
+    {
+      "district": "28",
+      "district_name": "Seletar / Yio Chu Kang",
+      "longitude": 103.86624968252197,
+      "latitude": 1.3862071527706605
+    }
+  ]
+}
