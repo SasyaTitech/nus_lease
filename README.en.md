@@ -59,7 +59,17 @@ Official source:
 
 ### Map geometry
 
-The district map is a `D01-D28` proxy layer assembled from public URA planning-area boundaries, not an official postal-district polygon file.
+The `D01-D28` map is not an official postal-district polygon file.
+
+The current build logic is:
+
+- use public `URA subzone` boundaries as the smallest geographic unit
+- group `URA` rental transactions inside each `subzone` by their `postal district`
+- if a `subzone` spans multiple postal districts, assign that `subzone` to the district with the highest transaction count
+- if transaction evidence is too weak, try a second pass with `OneMap` reverse-geocoded postal codes
+- if the result is still unclear, leave that `subzone` blank instead of forcing it into a nearby district
+
+So this layer is useful for market reading and relative comparison, but not for legal, surveying, or exact postal-boundary use.
 
 Official boundary source:
 - https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view

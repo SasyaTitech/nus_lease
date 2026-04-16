@@ -68,7 +68,15 @@ HDB 数据来自官方开放数据集。
 
 网页上的 `D01-D28` 地图不是官方精确 postal district polygon。
 
-它是基于公开的 `URA planning area` 边界，进一步合并出来的 district proxy layer，所以更适合做市场阅读和区域比较，而不是法律或测绘用途。
+现在这张地图的做法是：
+
+- 先用公开的 `URA subzone` 边界作为最小地理单元。
+- 再把落在每个 `subzone` 内的 `URA` 成交租约按所属 `postal district` 分类统计。
+- 如果一个 `subzone` 横跨多个 `postal district`，就把这个 `subzone` 归到成交笔数最多的那个 `district`。
+- 如果成交证据不够，再用 `OneMap` 的邮编反查补一层。
+- 仍然判断不清的 `subzone` 会直接留空，不会强行并到最近邻或更大的行政区里。
+
+所以它更适合做市场阅读和区域比较，而不是法律、测绘或精确邮区查询。
 
 官方边界来源：
 - https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view

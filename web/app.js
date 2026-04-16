@@ -546,7 +546,8 @@ function renderStatus(snapshot) {
     listingAvailable
       ? "挂牌价代表当前在线 asking rent，不等于已成交租金。"
       : "当前公开站点先展示官方成交与官方 HDB 口径，挂牌侧会在后续补入。",
-    "Condo 地图只保留成交证据足够强或人工校正过的 subzone；不再使用最近邻或 planning-area fallback 去硬补邮区。",
+    "Condo 地图先以公开的 URA subzone 作为最小单元；如果一个 subzone 横跨多个邮区，就并入其中成交笔数最多的那个 district。",
+    "成交证据不够时会再用 OneMap 邮编反查补一层；仍然判断不清的 subzone 会留空，不再强行并入最近邻。",
     `为减少噪声，Condo 成交少于 ${MIN_CONDO_TRANSACTION_COUNT} 笔的格子会被隐藏。`,
   ];
   document.getElementById("notes-list").innerHTML = notes.map((note) => `<li>${note}</li>`).join("");
