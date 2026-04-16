@@ -128,6 +128,24 @@ python3 scripts/build_market_snapshot.py --hdb data/raw/hdb_rentals.json
 python3 scripts/build_district_boundaries.py
 ```
 
+If you want to supplement unresolved `subzone` assignments with postal-district lookups, provide OneMap credentials:
+
+```bash
+export ONEMAP_EMAIL='your-email'
+export ONEMAP_PASSWORD='your-password'
+python3 scripts/build_district_boundaries.py --use-onemap
+```
+
+The boundary builder now keeps only:
+
+- strong `transaction-majority` assignments
+- `manual override` or `OneMap postal-majority` assignments
+
+It no longer fills gaps with nearest-neighbour or planning-area fallbacks.  
+Manual corrections live in:
+
+- `data/config/subzone_district_overrides.json`
+
 Output:
 
 - `data/processed/market_snapshot.json`

@@ -158,6 +158,24 @@ python3 scripts/build_market_snapshot.py --hdb data/raw/hdb_rentals.json
 python3 scripts/build_district_boundaries.py
 ```
 
+如果你想进一步给 `subzone` 补邮区，可以额外提供 `OneMap` 凭证：
+
+```bash
+export ONEMAP_EMAIL='your-email'
+export ONEMAP_PASSWORD='your-password'
+python3 scripts/build_district_boundaries.py --use-onemap
+```
+
+这个脚本现在只会保留两类 `subzone`：
+
+- `transaction-majority` 证据足够强的
+- `manual override` 或 `OneMap postal-majority` 能补上的
+
+不会再用最近邻或 `planning area` fallback 去硬补。  
+手工修正入口在：
+
+- `data/config/subzone_district_overrides.json`
+
 输出：
 
 - `data/processed/market_snapshot.json`
