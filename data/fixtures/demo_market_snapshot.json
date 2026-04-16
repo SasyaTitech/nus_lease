@@ -1,0 +1,3083 @@
+{
+  "meta": {
+    "generated_at": "2026-04-16T09:26:24.412961+00:00",
+    "mode": "demo",
+    "hdb_meta": {
+      "source": "HDB Renting Out of Flats from Jan 2021",
+      "window_months": 3,
+      "latest_available_month": "2026-03-01",
+      "window_start": "2026-01-01"
+    },
+    "notes": [
+      "This file is synthetic and exists only so the dashboard can render before live data is wired in.",
+      "Run the ingestion scripts to replace it with real URA, PropertyGuru, and HDB-derived data.",
+      "2BR2BA is only available on the listing side. URA transactions do not expose bathroom counts.",
+      "The condo map merges official URA planning-area boundaries into a D01-D28 district proxy layer.",
+      "The HDB mode uses one official source only: recent HDB rental approvals aggregated by town and flat type."
+    ]
+  },
+  "condo": {
+    "districts": [
+      {
+        "district": "01",
+        "district_name": "Boat Quay / Raffles Place / Marina",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 4034.62,
+        "transaction_median": 3590,
+        "delta": 444.62,
+        "premium_pct": 0.1238,
+        "listing_count": 31,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "01",
+        "district_name": "Boat Quay / Raffles Place / Marina",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4793.63,
+        "transaction_median": 4681,
+        "delta": 112.63,
+        "premium_pct": 0.0241,
+        "listing_count": 26,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 4793.63,
+          "2BR2BA": 4985.38
+        }
+      },
+      {
+        "district": "01",
+        "district_name": "Boat Quay / Raffles Place / Marina",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5979.5,
+        "transaction_median": 5298,
+        "delta": 681.5,
+        "premium_pct": 0.1286,
+        "listing_count": 21,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "01",
+        "district_name": "Boat Quay / Raffles Place / Marina",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6595.15,
+        "transaction_median": 5937,
+        "delta": 658.15,
+        "premium_pct": 0.1109,
+        "listing_count": 16,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "01",
+        "district_name": "Boat Quay / Raffles Place / Marina",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4909.92,
+        "transaction_median": 4740,
+        "delta": 169.92,
+        "premium_pct": 0.0358,
+        "listing_count": 11,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "02",
+        "district_name": "Chinatown / Tanjong Pagar",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3881.38,
+        "transaction_median": 3400,
+        "delta": 481.38,
+        "premium_pct": 0.1416,
+        "listing_count": 32,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "02",
+        "district_name": "Chinatown / Tanjong Pagar",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4717.73,
+        "transaction_median": 4304,
+        "delta": 413.73,
+        "premium_pct": 0.0961,
+        "listing_count": 27,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 4717.73,
+          "2BR2BA": 4906.44
+        }
+      },
+      {
+        "district": "02",
+        "district_name": "Chinatown / Tanjong Pagar",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5330.44,
+        "transaction_median": 5053,
+        "delta": 277.44,
+        "premium_pct": 0.0549,
+        "listing_count": 22,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "02",
+        "district_name": "Chinatown / Tanjong Pagar",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6053.53,
+        "transaction_median": 5620,
+        "delta": 433.53,
+        "premium_pct": 0.0771,
+        "listing_count": 17,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "02",
+        "district_name": "Chinatown / Tanjong Pagar",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 5113.33,
+        "transaction_median": 4453,
+        "delta": 660.33,
+        "premium_pct": 0.1483,
+        "listing_count": 12,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "03",
+        "district_name": "Alexandra / Commonwealth",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3084.3,
+        "transaction_median": 2959,
+        "delta": 125.3,
+        "premium_pct": 0.0423,
+        "listing_count": 33,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "03",
+        "district_name": "Alexandra / Commonwealth",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3893.7,
+        "transaction_median": 3746,
+        "delta": 147.7,
+        "premium_pct": 0.0394,
+        "listing_count": 28,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 3893.7,
+          "2BR2BA": 4049.45
+        }
+      },
+      {
+        "district": "03",
+        "district_name": "Alexandra / Commonwealth",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4760.1,
+        "transaction_median": 4587,
+        "delta": 173.1,
+        "premium_pct": 0.0377,
+        "listing_count": 23,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "03",
+        "district_name": "Alexandra / Commonwealth",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5907.81,
+        "transaction_median": 5110,
+        "delta": 797.81,
+        "premium_pct": 0.1561,
+        "listing_count": 18,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "03",
+        "district_name": "Alexandra / Commonwealth",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4157.42,
+        "transaction_median": 3962,
+        "delta": 195.42,
+        "premium_pct": 0.0493,
+        "listing_count": 13,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "04",
+        "district_name": "Harbourfront / Telok Blangah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3428.62,
+        "transaction_median": 2970,
+        "delta": 458.62,
+        "premium_pct": 0.1544,
+        "listing_count": 34,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "04",
+        "district_name": "Harbourfront / Telok Blangah",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4447.48,
+        "transaction_median": 3894,
+        "delta": 553.48,
+        "premium_pct": 0.1421,
+        "listing_count": 29,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 4447.48,
+          "2BR2BA": 4625.38
+        }
+      },
+      {
+        "district": "04",
+        "district_name": "Harbourfront / Telok Blangah",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4902.5,
+        "transaction_median": 4608,
+        "delta": 294.5,
+        "premium_pct": 0.0639,
+        "listing_count": 24,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "04",
+        "district_name": "Harbourfront / Telok Blangah",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5818.15,
+        "transaction_median": 5311,
+        "delta": 507.15,
+        "premium_pct": 0.0955,
+        "listing_count": 19,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "04",
+        "district_name": "Harbourfront / Telok Blangah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4353.19,
+        "transaction_median": 4164,
+        "delta": 189.19,
+        "premium_pct": 0.0454,
+        "listing_count": 14,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "05",
+        "district_name": "Buona Vista / West Coast / Clementi New Town",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3188.68,
+        "transaction_median": 2760,
+        "delta": 428.68,
+        "premium_pct": 0.1553,
+        "listing_count": 30,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "05",
+        "district_name": "Buona Vista / West Coast / Clementi New Town",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4041.33,
+        "transaction_median": 3806,
+        "delta": 235.33,
+        "premium_pct": 0.0618,
+        "listing_count": 25,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 4041.33,
+          "2BR2BA": 4202.98
+        }
+      },
+      {
+        "district": "05",
+        "district_name": "Buona Vista / West Coast / Clementi New Town",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4791.02,
+        "transaction_median": 4444,
+        "delta": 347.02,
+        "premium_pct": 0.0781,
+        "listing_count": 20,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "05",
+        "district_name": "Buona Vista / West Coast / Clementi New Town",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5373.45,
+        "transaction_median": 5084,
+        "delta": 289.45,
+        "premium_pct": 0.0569,
+        "listing_count": 15,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "05",
+        "district_name": "Buona Vista / West Coast / Clementi New Town",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4279.56,
+        "transaction_median": 4029,
+        "delta": 250.56,
+        "premium_pct": 0.0622,
+        "listing_count": 10,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "06",
+        "district_name": "City Hall / Clarke Quay",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3632.89,
+        "transaction_median": 3560,
+        "delta": 72.89,
+        "premium_pct": 0.0205,
+        "listing_count": 31,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "06",
+        "district_name": "City Hall / Clarke Quay",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4511.17,
+        "transaction_median": 4383,
+        "delta": 128.17,
+        "premium_pct": 0.0292,
+        "listing_count": 26,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 4511.17,
+          "2BR2BA": 4691.62
+        }
+      },
+      {
+        "district": "06",
+        "district_name": "City Hall / Clarke Quay",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5719.48,
+        "transaction_median": 5041,
+        "delta": 678.48,
+        "premium_pct": 0.1346,
+        "listing_count": 21,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "06",
+        "district_name": "City Hall / Clarke Quay",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6544.07,
+        "transaction_median": 5856,
+        "delta": 688.07,
+        "premium_pct": 0.1175,
+        "listing_count": 16,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "06",
+        "district_name": "City Hall / Clarke Quay",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4951.89,
+        "transaction_median": 4554,
+        "delta": 397.89,
+        "premium_pct": 0.0874,
+        "listing_count": 11,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "07",
+        "district_name": "Beach Road / Bugis / Rochor",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3340.94,
+        "transaction_median": 3250,
+        "delta": 90.94,
+        "premium_pct": 0.028,
+        "listing_count": 32,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "07",
+        "district_name": "Beach Road / Bugis / Rochor",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4751.06,
+        "transaction_median": 4121,
+        "delta": 630.06,
+        "premium_pct": 0.1529,
+        "listing_count": 27,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 4751.06,
+          "2BR2BA": 4941.1
+        }
+      },
+      {
+        "district": "07",
+        "district_name": "Beach Road / Bugis / Rochor",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5626.53,
+        "transaction_median": 4943,
+        "delta": 683.53,
+        "premium_pct": 0.1383,
+        "listing_count": 22,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "07",
+        "district_name": "Beach Road / Bugis / Rochor",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6053.62,
+        "transaction_median": 5519,
+        "delta": 534.62,
+        "premium_pct": 0.0969,
+        "listing_count": 17,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "07",
+        "district_name": "Beach Road / Bugis / Rochor",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4899.97,
+        "transaction_median": 4574,
+        "delta": 325.97,
+        "premium_pct": 0.0713,
+        "listing_count": 12,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "08",
+        "district_name": "Farrer Park / Serangoon Rd",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3363.26,
+        "transaction_median": 2956,
+        "delta": 407.26,
+        "premium_pct": 0.1378,
+        "listing_count": 33,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "08",
+        "district_name": "Farrer Park / Serangoon Rd",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3942.95,
+        "transaction_median": 3841,
+        "delta": 101.95,
+        "premium_pct": 0.0265,
+        "listing_count": 28,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 3942.95,
+          "2BR2BA": 4100.67
+        }
+      },
+      {
+        "district": "08",
+        "district_name": "Farrer Park / Serangoon Rd",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4819.06,
+        "transaction_median": 4352,
+        "delta": 467.06,
+        "premium_pct": 0.1073,
+        "listing_count": 23,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "08",
+        "district_name": "Farrer Park / Serangoon Rd",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5297.35,
+        "transaction_median": 5110,
+        "delta": 187.35,
+        "premium_pct": 0.0367,
+        "listing_count": 18,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "08",
+        "district_name": "Farrer Park / Serangoon Rd",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4583.35,
+        "transaction_median": 3985,
+        "delta": 598.35,
+        "premium_pct": 0.1502,
+        "listing_count": 13,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "09",
+        "district_name": "Orchard / River Valley",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 4589.04,
+        "transaction_median": 4296,
+        "delta": 293.04,
+        "premium_pct": 0.0682,
+        "listing_count": 34,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "09",
+        "district_name": "Orchard / River Valley",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 5943.59,
+        "transaction_median": 5191,
+        "delta": 752.59,
+        "premium_pct": 0.145,
+        "listing_count": 29,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 5943.59,
+          "2BR2BA": 6181.33
+        }
+      },
+      {
+        "district": "09",
+        "district_name": "Orchard / River Valley",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 6532.25,
+        "transaction_median": 5788,
+        "delta": 744.25,
+        "premium_pct": 0.1286,
+        "listing_count": 24,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "09",
+        "district_name": "Orchard / River Valley",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 7128.09,
+        "transaction_median": 6465,
+        "delta": 663.09,
+        "premium_pct": 0.1026,
+        "listing_count": 19,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "09",
+        "district_name": "Orchard / River Valley",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 6212.67,
+        "transaction_median": 5448,
+        "delta": 764.67,
+        "premium_pct": 0.1404,
+        "listing_count": 14,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "10",
+        "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 4730.94,
+        "transaction_median": 4378,
+        "delta": 352.94,
+        "premium_pct": 0.0806,
+        "listing_count": 30,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "10",
+        "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 5619.45,
+        "transaction_median": 5356,
+        "delta": 263.45,
+        "premium_pct": 0.0492,
+        "listing_count": 25,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 5619.45,
+          "2BR2BA": 5844.23
+        }
+      },
+      {
+        "district": "10",
+        "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 6878.52,
+        "transaction_median": 6222,
+        "delta": 656.52,
+        "premium_pct": 0.1055,
+        "listing_count": 20,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "10",
+        "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 7243.63,
+        "transaction_median": 6785,
+        "delta": 458.63,
+        "premium_pct": 0.0676,
+        "listing_count": 15,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "10",
+        "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 6031.05,
+        "transaction_median": 5839,
+        "delta": 192.05,
+        "premium_pct": 0.0329,
+        "listing_count": 10,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "11",
+        "district_name": "Watten Estate / Novena / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 4168.55,
+        "transaction_median": 3922,
+        "delta": 246.55,
+        "premium_pct": 0.0629,
+        "listing_count": 31,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "11",
+        "district_name": "Watten Estate / Novena / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 5261.83,
+        "transaction_median": 4750,
+        "delta": 511.83,
+        "premium_pct": 0.1078,
+        "listing_count": 26,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 5261.83,
+          "2BR2BA": 5472.3
+        }
+      },
+      {
+        "district": "11",
+        "district_name": "Watten Estate / Novena / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 6398.35,
+        "transaction_median": 5518,
+        "delta": 880.35,
+        "premium_pct": 0.1595,
+        "listing_count": 21,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "11",
+        "district_name": "Watten Estate / Novena / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6940.11,
+        "transaction_median": 6192,
+        "delta": 748.11,
+        "premium_pct": 0.1208,
+        "listing_count": 16,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "11",
+        "district_name": "Watten Estate / Novena / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 5791.85,
+        "transaction_median": 5001,
+        "delta": 790.85,
+        "premium_pct": 0.1581,
+        "listing_count": 11,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "12",
+        "district_name": "Balestier / Toa Payoh / Serangoon",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3141.05,
+        "transaction_median": 2733,
+        "delta": 408.05,
+        "premium_pct": 0.1493,
+        "listing_count": 32,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "12",
+        "district_name": "Balestier / Toa Payoh / Serangoon",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3608.36,
+        "transaction_median": 3426,
+        "delta": 182.36,
+        "premium_pct": 0.0532,
+        "listing_count": 27,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 3608.36,
+          "2BR2BA": 3752.69
+        }
+      },
+      {
+        "district": "12",
+        "district_name": "Balestier / Toa Payoh / Serangoon",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4810.75,
+        "transaction_median": 4236,
+        "delta": 574.75,
+        "premium_pct": 0.1357,
+        "listing_count": 22,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "12",
+        "district_name": "Balestier / Toa Payoh / Serangoon",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5603.46,
+        "transaction_median": 5043,
+        "delta": 560.46,
+        "premium_pct": 0.1111,
+        "listing_count": 17,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "12",
+        "district_name": "Balestier / Toa Payoh / Serangoon",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3837.8,
+        "transaction_median": 3734,
+        "delta": 103.8,
+        "premium_pct": 0.0278,
+        "listing_count": 12,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "13",
+        "district_name": "Macpherson / Potong Pasir",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2746.8,
+        "transaction_median": 2426,
+        "delta": 320.8,
+        "premium_pct": 0.1322,
+        "listing_count": 33,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "13",
+        "district_name": "Macpherson / Potong Pasir",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4016.09,
+        "transaction_median": 3531,
+        "delta": 485.09,
+        "premium_pct": 0.1374,
+        "listing_count": 28,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 4016.09,
+          "2BR2BA": 4176.73
+        }
+      },
+      {
+        "district": "13",
+        "district_name": "Macpherson / Potong Pasir",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4717.49,
+        "transaction_median": 4076,
+        "delta": 641.49,
+        "premium_pct": 0.1574,
+        "listing_count": 23,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "13",
+        "district_name": "Macpherson / Potong Pasir",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5820.2,
+        "transaction_median": 5048,
+        "delta": 772.2,
+        "premium_pct": 0.153,
+        "listing_count": 18,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "13",
+        "district_name": "Macpherson / Potong Pasir",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3954.46,
+        "transaction_median": 3821,
+        "delta": 133.46,
+        "premium_pct": 0.0349,
+        "listing_count": 13,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "14",
+        "district_name": "Eunos / Geylang / Paya Lebar",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3036.53,
+        "transaction_median": 2832,
+        "delta": 204.53,
+        "premium_pct": 0.0722,
+        "listing_count": 34,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "14",
+        "district_name": "Eunos / Geylang / Paya Lebar",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4086.36,
+        "transaction_median": 3590,
+        "delta": 496.36,
+        "premium_pct": 0.1383,
+        "listing_count": 29,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 4086.36,
+          "2BR2BA": 4249.81
+        }
+      },
+      {
+        "district": "14",
+        "district_name": "Eunos / Geylang / Paya Lebar",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4533.39,
+        "transaction_median": 4360,
+        "delta": 173.39,
+        "premium_pct": 0.0398,
+        "listing_count": 24,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "14",
+        "district_name": "Eunos / Geylang / Paya Lebar",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5836.41,
+        "transaction_median": 5046,
+        "delta": 790.41,
+        "premium_pct": 0.1566,
+        "listing_count": 19,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "14",
+        "district_name": "Eunos / Geylang / Paya Lebar",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4666.16,
+        "transaction_median": 4042,
+        "delta": 624.16,
+        "premium_pct": 0.1544,
+        "listing_count": 14,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "15",
+        "district_name": "East Coast / Marine Parade",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3502.53,
+        "transaction_median": 3222,
+        "delta": 280.53,
+        "premium_pct": 0.0871,
+        "listing_count": 30,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "15",
+        "district_name": "East Coast / Marine Parade",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4515.89,
+        "transaction_median": 4159,
+        "delta": 356.89,
+        "premium_pct": 0.0858,
+        "listing_count": 25,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 4515.89,
+          "2BR2BA": 4696.53
+        }
+      },
+      {
+        "district": "15",
+        "district_name": "East Coast / Marine Parade",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4904.32,
+        "transaction_median": 4735,
+        "delta": 169.32,
+        "premium_pct": 0.0358,
+        "listing_count": 20,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "15",
+        "district_name": "East Coast / Marine Parade",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 6559.15,
+        "transaction_median": 5682,
+        "delta": 877.15,
+        "premium_pct": 0.1544,
+        "listing_count": 15,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "15",
+        "district_name": "East Coast / Marine Parade",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 5153.84,
+        "transaction_median": 4515,
+        "delta": 638.84,
+        "premium_pct": 0.1415,
+        "listing_count": 10,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "16",
+        "district_name": "Bedok / Upper East Coast",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2893.01,
+        "transaction_median": 2802,
+        "delta": 91.01,
+        "premium_pct": 0.0325,
+        "listing_count": 31,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "16",
+        "district_name": "Bedok / Upper East Coast",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4148.98,
+        "transaction_median": 3799,
+        "delta": 349.98,
+        "premium_pct": 0.0921,
+        "listing_count": 26,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 4148.98,
+          "2BR2BA": 4314.94
+        }
+      },
+      {
+        "district": "16",
+        "district_name": "Bedok / Upper East Coast",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5239.18,
+        "transaction_median": 4590,
+        "delta": 649.18,
+        "premium_pct": 0.1414,
+        "listing_count": 21,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "16",
+        "district_name": "Bedok / Upper East Coast",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5395.21,
+        "transaction_median": 5244,
+        "delta": 151.21,
+        "premium_pct": 0.0288,
+        "listing_count": 16,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "16",
+        "district_name": "Bedok / Upper East Coast",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4571.76,
+        "transaction_median": 4092,
+        "delta": 479.76,
+        "premium_pct": 0.1172,
+        "listing_count": 11,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "17",
+        "district_name": "Changi Airport / Changi Village",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2677.33,
+        "transaction_median": 2377,
+        "delta": 300.33,
+        "premium_pct": 0.1263,
+        "listing_count": 32,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "17",
+        "district_name": "Changi Airport / Changi Village",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3839.67,
+        "transaction_median": 3496,
+        "delta": 343.67,
+        "premium_pct": 0.0983,
+        "listing_count": 27,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 3839.67,
+          "2BR2BA": 3993.26
+        }
+      },
+      {
+        "district": "17",
+        "district_name": "Changi Airport / Changi Village",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4664.83,
+        "transaction_median": 4103,
+        "delta": 561.83,
+        "premium_pct": 0.1369,
+        "listing_count": 22,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "17",
+        "district_name": "Changi Airport / Changi Village",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5464.02,
+        "transaction_median": 4845,
+        "delta": 619.02,
+        "premium_pct": 0.1278,
+        "listing_count": 17,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "17",
+        "district_name": "Changi Airport / Changi Village",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4281.21,
+        "transaction_median": 3710,
+        "delta": 571.21,
+        "premium_pct": 0.154,
+        "listing_count": 12,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "18",
+        "district_name": "Pasir Ris / Tampines",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2759.62,
+        "transaction_median": 2484,
+        "delta": 275.62,
+        "premium_pct": 0.111,
+        "listing_count": 33,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "18",
+        "district_name": "Pasir Ris / Tampines",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4052.33,
+        "transaction_median": 3557,
+        "delta": 495.33,
+        "premium_pct": 0.1393,
+        "listing_count": 28,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 4052.33,
+          "2BR2BA": 4214.42
+        }
+      },
+      {
+        "district": "18",
+        "district_name": "Pasir Ris / Tampines",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4552.99,
+        "transaction_median": 4152,
+        "delta": 400.99,
+        "premium_pct": 0.0966,
+        "listing_count": 23,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "18",
+        "district_name": "Pasir Ris / Tampines",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5102.22,
+        "transaction_median": 4788,
+        "delta": 314.22,
+        "premium_pct": 0.0656,
+        "listing_count": 18,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "18",
+        "district_name": "Pasir Ris / Tampines",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3959.56,
+        "transaction_median": 3650,
+        "delta": 309.56,
+        "premium_pct": 0.0848,
+        "listing_count": 13,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "19",
+        "district_name": "Hougang / Punggol / Sengkang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2794.37,
+        "transaction_median": 2516,
+        "delta": 278.37,
+        "premium_pct": 0.1106,
+        "listing_count": 34,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "19",
+        "district_name": "Hougang / Punggol / Sengkang",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3625.04,
+        "transaction_median": 3392,
+        "delta": 233.04,
+        "premium_pct": 0.0687,
+        "listing_count": 29,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 3625.04,
+          "2BR2BA": 3770.04
+        }
+      },
+      {
+        "district": "19",
+        "district_name": "Hougang / Punggol / Sengkang",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4533.62,
+        "transaction_median": 4036,
+        "delta": 497.62,
+        "premium_pct": 0.1233,
+        "listing_count": 24,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "19",
+        "district_name": "Hougang / Punggol / Sengkang",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5151.54,
+        "transaction_median": 4819,
+        "delta": 332.54,
+        "premium_pct": 0.069,
+        "listing_count": 19,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "19",
+        "district_name": "Hougang / Punggol / Sengkang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4051.06,
+        "transaction_median": 3548,
+        "delta": 503.06,
+        "premium_pct": 0.1418,
+        "listing_count": 14,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "20",
+        "district_name": "Ang Mo Kio / Bishan / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3169.24,
+        "transaction_median": 2740,
+        "delta": 429.24,
+        "premium_pct": 0.1567,
+        "listing_count": 30,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "20",
+        "district_name": "Ang Mo Kio / Bishan / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3967.01,
+        "transaction_median": 3631,
+        "delta": 336.01,
+        "premium_pct": 0.0925,
+        "listing_count": 25,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 3967.01,
+          "2BR2BA": 4125.69
+        }
+      },
+      {
+        "district": "20",
+        "district_name": "Ang Mo Kio / Bishan / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5069.82,
+        "transaction_median": 4381,
+        "delta": 688.82,
+        "premium_pct": 0.1572,
+        "listing_count": 20,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "20",
+        "district_name": "Ang Mo Kio / Bishan / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5641.29,
+        "transaction_median": 4961,
+        "delta": 680.29,
+        "premium_pct": 0.1371,
+        "listing_count": 15,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "20",
+        "district_name": "Ang Mo Kio / Bishan / Thomson",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4189.66,
+        "transaction_median": 3954,
+        "delta": 235.66,
+        "premium_pct": 0.0596,
+        "listing_count": 10,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "21",
+        "district_name": "Clementi Park / Upper Bukit Timah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 3306.23,
+        "transaction_median": 2950,
+        "delta": 356.23,
+        "premium_pct": 0.1208,
+        "listing_count": 31,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "21",
+        "district_name": "Clementi Park / Upper Bukit Timah",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4252.44,
+        "transaction_median": 4073,
+        "delta": 179.44,
+        "premium_pct": 0.0441,
+        "listing_count": 26,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 4252.44,
+          "2BR2BA": 4422.54
+        }
+      },
+      {
+        "district": "21",
+        "district_name": "Clementi Park / Upper Bukit Timah",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 5250.7,
+        "transaction_median": 4807,
+        "delta": 443.7,
+        "premium_pct": 0.0923,
+        "listing_count": 21,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "21",
+        "district_name": "Clementi Park / Upper Bukit Timah",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5816.49,
+        "transaction_median": 5475,
+        "delta": 341.49,
+        "premium_pct": 0.0624,
+        "listing_count": 16,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "21",
+        "district_name": "Clementi Park / Upper Bukit Timah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4957.32,
+        "transaction_median": 4393,
+        "delta": 564.32,
+        "premium_pct": 0.1285,
+        "listing_count": 11,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "22",
+        "district_name": "Boon Lay / Jurong / Tuas",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2519.69,
+        "transaction_median": 2248,
+        "delta": 271.69,
+        "premium_pct": 0.1209,
+        "listing_count": 32,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "22",
+        "district_name": "Boon Lay / Jurong / Tuas",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3219.66,
+        "transaction_median": 3074,
+        "delta": 145.66,
+        "premium_pct": 0.0474,
+        "listing_count": 27,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 3219.66,
+          "2BR2BA": 3348.45
+        }
+      },
+      {
+        "district": "22",
+        "district_name": "Boon Lay / Jurong / Tuas",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4337.82,
+        "transaction_median": 4010,
+        "delta": 327.82,
+        "premium_pct": 0.0818,
+        "listing_count": 22,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "22",
+        "district_name": "Boon Lay / Jurong / Tuas",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 4782.63,
+        "transaction_median": 4552,
+        "delta": 230.63,
+        "premium_pct": 0.0507,
+        "listing_count": 17,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "22",
+        "district_name": "Boon Lay / Jurong / Tuas",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3770.51,
+        "transaction_median": 3402,
+        "delta": 368.51,
+        "premium_pct": 0.1083,
+        "listing_count": 12,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "23",
+        "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2352.11,
+        "transaction_median": 2031,
+        "delta": 321.11,
+        "premium_pct": 0.1581,
+        "listing_count": 33,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "23",
+        "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3207.85,
+        "transaction_median": 3075,
+        "delta": 132.85,
+        "premium_pct": 0.0432,
+        "listing_count": 28,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 3207.85,
+          "2BR2BA": 3336.16
+        }
+      },
+      {
+        "district": "23",
+        "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 3808.63,
+        "transaction_median": 3678,
+        "delta": 130.63,
+        "premium_pct": 0.0355,
+        "listing_count": 23,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "23",
+        "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 4841.87,
+        "transaction_median": 4452,
+        "delta": 389.87,
+        "premium_pct": 0.0876,
+        "listing_count": 18,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "23",
+        "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3577.22,
+        "transaction_median": 3490,
+        "delta": 87.22,
+        "premium_pct": 0.025,
+        "listing_count": 13,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "24",
+        "district_name": "Lim Chu Kang / Tengah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2136.17,
+        "transaction_median": 1998,
+        "delta": 138.17,
+        "premium_pct": 0.0692,
+        "listing_count": 34,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "24",
+        "district_name": "Lim Chu Kang / Tengah",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3027.8,
+        "transaction_median": 2746,
+        "delta": 281.8,
+        "premium_pct": 0.1026,
+        "listing_count": 29,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 3027.8,
+          "2BR2BA": 3148.91
+        }
+      },
+      {
+        "district": "24",
+        "district_name": "Lim Chu Kang / Tengah",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 3900.54,
+        "transaction_median": 3481,
+        "delta": 419.54,
+        "premium_pct": 0.1205,
+        "listing_count": 24,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "24",
+        "district_name": "Lim Chu Kang / Tengah",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 4387.42,
+        "transaction_median": 4301,
+        "delta": 86.42,
+        "premium_pct": 0.0201,
+        "listing_count": 19,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "24",
+        "district_name": "Lim Chu Kang / Tengah",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3652.49,
+        "transaction_median": 3167,
+        "delta": 485.49,
+        "premium_pct": 0.1533,
+        "listing_count": 14,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "25",
+        "district_name": "Kranji / Woodgrove",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2418.41,
+        "transaction_median": 2119,
+        "delta": 299.41,
+        "premium_pct": 0.1413,
+        "listing_count": 30,
+        "transaction_count": 21,
+        "transaction_project_count": 20,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "25",
+        "district_name": "Kranji / Woodgrove",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3367.16,
+        "transaction_median": 3140,
+        "delta": 227.16,
+        "premium_pct": 0.0723,
+        "listing_count": 25,
+        "transaction_count": 17,
+        "transaction_project_count": 16,
+        "listing_layout_medians": {
+          "2BR": 3367.16,
+          "2BR2BA": 3501.85
+        }
+      },
+      {
+        "district": "25",
+        "district_name": "Kranji / Woodgrove",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 3870.18,
+        "transaction_median": 3528,
+        "delta": 342.18,
+        "premium_pct": 0.097,
+        "listing_count": 20,
+        "transaction_count": 13,
+        "transaction_project_count": 12,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "25",
+        "district_name": "Kranji / Woodgrove",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 4560.88,
+        "transaction_median": 4414,
+        "delta": 146.88,
+        "premium_pct": 0.0333,
+        "listing_count": 15,
+        "transaction_count": 9,
+        "transaction_project_count": 8,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "25",
+        "district_name": "Kranji / Woodgrove",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3700.01,
+        "transaction_median": 3389,
+        "delta": 311.01,
+        "premium_pct": 0.0918,
+        "listing_count": 10,
+        "transaction_count": 5,
+        "transaction_project_count": 4,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "26",
+        "district_name": "Upper Thomson / Springleaf",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2925.31,
+        "transaction_median": 2757,
+        "delta": 168.31,
+        "premium_pct": 0.061,
+        "listing_count": 31,
+        "transaction_count": 22,
+        "transaction_project_count": 21,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "26",
+        "district_name": "Upper Thomson / Springleaf",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 4073.19,
+        "transaction_median": 3590,
+        "delta": 483.19,
+        "premium_pct": 0.1346,
+        "listing_count": 26,
+        "transaction_count": 18,
+        "transaction_project_count": 17,
+        "listing_layout_medians": {
+          "2BR": 4073.19,
+          "2BR2BA": 4236.12
+        }
+      },
+      {
+        "district": "26",
+        "district_name": "Upper Thomson / Springleaf",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4604.35,
+        "transaction_median": 4274,
+        "delta": 330.35,
+        "premium_pct": 0.0773,
+        "listing_count": 21,
+        "transaction_count": 14,
+        "transaction_project_count": 13,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "26",
+        "district_name": "Upper Thomson / Springleaf",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5658.38,
+        "transaction_median": 5098,
+        "delta": 560.38,
+        "premium_pct": 0.1099,
+        "listing_count": 16,
+        "transaction_count": 10,
+        "transaction_project_count": 9,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "26",
+        "district_name": "Upper Thomson / Springleaf",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 4177.88,
+        "transaction_median": 3849,
+        "delta": 328.88,
+        "premium_pct": 0.0854,
+        "listing_count": 11,
+        "transaction_count": 6,
+        "transaction_project_count": 5,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "27",
+        "district_name": "Yishun / Sembawang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2416.51,
+        "transaction_median": 2190,
+        "delta": 226.51,
+        "premium_pct": 0.1034,
+        "listing_count": 32,
+        "transaction_count": 23,
+        "transaction_project_count": 22,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "27",
+        "district_name": "Yishun / Sembawang",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3638.55,
+        "transaction_median": 3348,
+        "delta": 290.55,
+        "premium_pct": 0.0868,
+        "listing_count": 27,
+        "transaction_count": 19,
+        "transaction_project_count": 18,
+        "listing_layout_medians": {
+          "2BR": 3638.55,
+          "2BR2BA": 3784.09
+        }
+      },
+      {
+        "district": "27",
+        "district_name": "Yishun / Sembawang",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4403.69,
+        "transaction_median": 3811,
+        "delta": 592.69,
+        "premium_pct": 0.1555,
+        "listing_count": 22,
+        "transaction_count": 15,
+        "transaction_project_count": 14,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "27",
+        "district_name": "Yishun / Sembawang",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 4817.62,
+        "transaction_median": 4506,
+        "delta": 311.62,
+        "premium_pct": 0.0692,
+        "listing_count": 17,
+        "transaction_count": 11,
+        "transaction_project_count": 10,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "27",
+        "district_name": "Yishun / Sembawang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3553.15,
+        "transaction_median": 3310,
+        "delta": 243.15,
+        "premium_pct": 0.0735,
+        "listing_count": 12,
+        "transaction_count": 7,
+        "transaction_project_count": 6,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "28",
+        "district_name": "Seletar / Yio Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Studio / 1BR",
+        "listing_median": 2611.73,
+        "transaction_median": 2376,
+        "delta": 235.73,
+        "premium_pct": 0.0992,
+        "listing_count": 33,
+        "transaction_count": 20,
+        "transaction_project_count": 19,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "28",
+        "district_name": "Seletar / Yio Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "2BR",
+        "listing_median": 3572.4,
+        "transaction_median": 3436,
+        "delta": 136.4,
+        "premium_pct": 0.0397,
+        "listing_count": 28,
+        "transaction_count": 16,
+        "transaction_project_count": 15,
+        "listing_layout_medians": {
+          "2BR": 3572.4,
+          "2BR2BA": 3715.3
+        }
+      },
+      {
+        "district": "28",
+        "district_name": "Seletar / Yio Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "3BR",
+        "listing_median": 4395.59,
+        "transaction_median": 4098,
+        "delta": 297.59,
+        "premium_pct": 0.0726,
+        "listing_count": 23,
+        "transaction_count": 12,
+        "transaction_project_count": 11,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "28",
+        "district_name": "Seletar / Yio Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "4BR+",
+        "listing_median": 5530.35,
+        "transaction_median": 4781,
+        "delta": 749.35,
+        "premium_pct": 0.1567,
+        "listing_count": 18,
+        "transaction_count": 8,
+        "transaction_project_count": 7,
+        "listing_layout_medians": {}
+      },
+      {
+        "district": "28",
+        "district_name": "Seletar / Yio Chu Kang",
+        "segment": "non-landed",
+        "bedroom_bucket": "Unknown",
+        "listing_median": 3884.68,
+        "transaction_median": 3662,
+        "delta": 222.68,
+        "premium_pct": 0.0608,
+        "listing_count": 13,
+        "transaction_count": 4,
+        "transaction_project_count": 3,
+        "listing_layout_medians": {}
+      }
+    ],
+    "district_names": {
+      "01": "Boat Quay / Raffles Place / Marina",
+      "02": "Chinatown / Tanjong Pagar",
+      "03": "Alexandra / Commonwealth",
+      "04": "Harbourfront / Telok Blangah",
+      "05": "Buona Vista / West Coast / Clementi New Town",
+      "06": "City Hall / Clarke Quay",
+      "07": "Beach Road / Bugis / Rochor",
+      "08": "Farrer Park / Serangoon Rd",
+      "09": "Orchard / River Valley",
+      "10": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+      "11": "Watten Estate / Novena / Thomson",
+      "12": "Balestier / Toa Payoh / Serangoon",
+      "13": "Macpherson / Potong Pasir",
+      "14": "Eunos / Geylang / Paya Lebar",
+      "15": "East Coast / Marine Parade",
+      "16": "Bedok / Upper East Coast",
+      "17": "Changi Airport / Changi Village",
+      "18": "Pasir Ris / Tampines",
+      "19": "Hougang / Punggol / Sengkang",
+      "20": "Ang Mo Kio / Bishan / Thomson",
+      "21": "Clementi Park / Upper Bukit Timah",
+      "22": "Boon Lay / Jurong / Tuas",
+      "23": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+      "24": "Lim Chu Kang / Tengah",
+      "25": "Kranji / Woodgrove",
+      "26": "Upper Thomson / Springleaf",
+      "27": "Yishun / Sembawang",
+      "28": "Seletar / Yio Chu Kang"
+    },
+    "bedroom_buckets": [
+      "Studio / 1BR",
+      "2BR",
+      "3BR",
+      "4BR+",
+      "Unknown"
+    ],
+    "segments": [
+      "non-landed"
+    ]
+  },
+  "hdb": {
+    "towns": [
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "1-RM",
+        "median_rent": 1397,
+        "approval_count": 53
+      },
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "2-RM",
+        "median_rent": 1523,
+        "approval_count": 47
+      },
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "3-RM",
+        "median_rent": 1734,
+        "approval_count": 41
+      },
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "4-RM",
+        "median_rent": 1886,
+        "approval_count": 35
+      },
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "5-RM",
+        "median_rent": 2208,
+        "approval_count": 29
+      },
+      {
+        "town": "ANG MO KIO",
+        "flat_type": "EXEC",
+        "median_rent": 2418,
+        "approval_count": 23
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "1-RM",
+        "median_rent": 1318,
+        "approval_count": 54
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "2-RM",
+        "median_rent": 1651,
+        "approval_count": 48
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "3-RM",
+        "median_rent": 1749,
+        "approval_count": 42
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "4-RM",
+        "median_rent": 2009,
+        "approval_count": 36
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "5-RM",
+        "median_rent": 2156,
+        "approval_count": 30
+      },
+      {
+        "town": "BEDOK",
+        "flat_type": "EXEC",
+        "median_rent": 2408,
+        "approval_count": 24
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "2-RM",
+        "median_rent": 1579,
+        "approval_count": 49
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "3-RM",
+        "median_rent": 1786,
+        "approval_count": 43
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "4-RM",
+        "median_rent": 2043,
+        "approval_count": 37
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "5-RM",
+        "median_rent": 2201,
+        "approval_count": 31
+      },
+      {
+        "town": "BISHAN",
+        "flat_type": "EXEC",
+        "median_rent": 2374,
+        "approval_count": 25
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "2-RM",
+        "median_rent": 1540,
+        "approval_count": 50
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "3-RM",
+        "median_rent": 1775,
+        "approval_count": 44
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "4-RM",
+        "median_rent": 2122,
+        "approval_count": 38
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "5-RM",
+        "median_rent": 2323,
+        "approval_count": 32
+      },
+      {
+        "town": "BUKIT BATOK",
+        "flat_type": "EXEC",
+        "median_rent": 2487,
+        "approval_count": 26
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "1-RM",
+        "median_rent": 1422,
+        "approval_count": 57
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "2-RM",
+        "median_rent": 1645,
+        "approval_count": 51
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "3-RM",
+        "median_rent": 1790,
+        "approval_count": 45
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "4-RM",
+        "median_rent": 2190,
+        "approval_count": 39
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "5-RM",
+        "median_rent": 2234,
+        "approval_count": 33
+      },
+      {
+        "town": "BUKIT MERAH",
+        "flat_type": "EXEC",
+        "median_rent": 2510,
+        "approval_count": 27
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "2-RM",
+        "median_rent": 1728,
+        "approval_count": 52
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "3-RM",
+        "median_rent": 1952,
+        "approval_count": 46
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "4-RM",
+        "median_rent": 2169,
+        "approval_count": 40
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "5-RM",
+        "median_rent": 2306,
+        "approval_count": 34
+      },
+      {
+        "town": "BUKIT PANJANG",
+        "flat_type": "EXEC",
+        "median_rent": 2508,
+        "approval_count": 28
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "2-RM",
+        "median_rent": 1842,
+        "approval_count": 53
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "3-RM",
+        "median_rent": 1861,
+        "approval_count": 47
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "4-RM",
+        "median_rent": 2124,
+        "approval_count": 41
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "5-RM",
+        "median_rent": 2397,
+        "approval_count": 35
+      },
+      {
+        "town": "BUKIT TIMAH",
+        "flat_type": "EXEC",
+        "median_rent": 2550,
+        "approval_count": 29
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "1-RM",
+        "median_rent": 1507,
+        "approval_count": 52
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "2-RM",
+        "median_rent": 1862,
+        "approval_count": 46
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "3-RM",
+        "median_rent": 1961,
+        "approval_count": 40
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "4-RM",
+        "median_rent": 2173,
+        "approval_count": 34
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "5-RM",
+        "median_rent": 2434,
+        "approval_count": 28
+      },
+      {
+        "town": "CENTRAL AREA",
+        "flat_type": "EXEC",
+        "median_rent": 2673,
+        "approval_count": 22
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "2-RM",
+        "median_rent": 1846,
+        "approval_count": 47
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "3-RM",
+        "median_rent": 2089,
+        "approval_count": 41
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "4-RM",
+        "median_rent": 2288,
+        "approval_count": 35
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "5-RM",
+        "median_rent": 2534,
+        "approval_count": 29
+      },
+      {
+        "town": "CHOA CHU KANG",
+        "flat_type": "EXEC",
+        "median_rent": 2584,
+        "approval_count": 23
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "2-RM",
+        "median_rent": 1944,
+        "approval_count": 48
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "3-RM",
+        "median_rent": 1992,
+        "approval_count": 42
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "4-RM",
+        "median_rent": 2246,
+        "approval_count": 36
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "5-RM",
+        "median_rent": 2452,
+        "approval_count": 30
+      },
+      {
+        "town": "CLEMENTI",
+        "flat_type": "EXEC",
+        "median_rent": 2726,
+        "approval_count": 24
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "1-RM",
+        "median_rent": 1757,
+        "approval_count": 55
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "2-RM",
+        "median_rent": 1872,
+        "approval_count": 49
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "3-RM",
+        "median_rent": 2153,
+        "approval_count": 43
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "4-RM",
+        "median_rent": 2281,
+        "approval_count": 37
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "5-RM",
+        "median_rent": 2603,
+        "approval_count": 31
+      },
+      {
+        "town": "GEYLANG",
+        "flat_type": "EXEC",
+        "median_rent": 2761,
+        "approval_count": 25
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "2-RM",
+        "median_rent": 1940,
+        "approval_count": 50
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "3-RM",
+        "median_rent": 2121,
+        "approval_count": 44
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "4-RM",
+        "median_rent": 2334,
+        "approval_count": 38
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "5-RM",
+        "median_rent": 2626,
+        "approval_count": 32
+      },
+      {
+        "town": "HOUGANG",
+        "flat_type": "EXEC",
+        "median_rent": 2852,
+        "approval_count": 26
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "2-RM",
+        "median_rent": 1891,
+        "approval_count": 51
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "3-RM",
+        "median_rent": 2077,
+        "approval_count": 45
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "4-RM",
+        "median_rent": 2278,
+        "approval_count": 39
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "5-RM",
+        "median_rent": 2552,
+        "approval_count": 33
+      },
+      {
+        "town": "JURONG EAST",
+        "flat_type": "EXEC",
+        "median_rent": 2839,
+        "approval_count": 27
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "2-RM",
+        "median_rent": 2069,
+        "approval_count": 52
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "3-RM",
+        "median_rent": 2131,
+        "approval_count": 46
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "4-RM",
+        "median_rent": 2489,
+        "approval_count": 40
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "5-RM",
+        "median_rent": 2663,
+        "approval_count": 34
+      },
+      {
+        "town": "JURONG WEST",
+        "flat_type": "EXEC",
+        "median_rent": 2782,
+        "approval_count": 28
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "1-RM",
+        "median_rent": 1723,
+        "approval_count": 59
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "2-RM",
+        "median_rent": 2039,
+        "approval_count": 53
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "3-RM",
+        "median_rent": 2339,
+        "approval_count": 47
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "4-RM",
+        "median_rent": 2459,
+        "approval_count": 41
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "5-RM",
+        "median_rent": 2712,
+        "approval_count": 35
+      },
+      {
+        "town": "KALLANG/WHAMPOA",
+        "flat_type": "EXEC",
+        "median_rent": 2917,
+        "approval_count": 29
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "2-RM",
+        "median_rent": 2147,
+        "approval_count": 46
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "3-RM",
+        "median_rent": 2337,
+        "approval_count": 40
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "4-RM",
+        "median_rent": 2552,
+        "approval_count": 34
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "5-RM",
+        "median_rent": 2719,
+        "approval_count": 28
+      },
+      {
+        "town": "MARINE PARADE",
+        "flat_type": "EXEC",
+        "median_rent": 2904,
+        "approval_count": 22
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "2-RM",
+        "median_rent": 2102,
+        "approval_count": 47
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "3-RM",
+        "median_rent": 2386,
+        "approval_count": 41
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "4-RM",
+        "median_rent": 2606,
+        "approval_count": 35
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "5-RM",
+        "median_rent": 2682,
+        "approval_count": 29
+      },
+      {
+        "town": "PASIR RIS",
+        "flat_type": "EXEC",
+        "median_rent": 2917,
+        "approval_count": 23
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "2-RM",
+        "median_rent": 2232,
+        "approval_count": 48
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "3-RM",
+        "median_rent": 2264,
+        "approval_count": 42
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "4-RM",
+        "median_rent": 2535,
+        "approval_count": 36
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "5-RM",
+        "median_rent": 2668,
+        "approval_count": 30
+      },
+      {
+        "town": "PUNGGOL",
+        "flat_type": "EXEC",
+        "median_rent": 3055,
+        "approval_count": 24
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "2-RM",
+        "median_rent": 2184,
+        "approval_count": 49
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "3-RM",
+        "median_rent": 2433,
+        "approval_count": 43
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "4-RM",
+        "median_rent": 2567,
+        "approval_count": 37
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "5-RM",
+        "median_rent": 2869,
+        "approval_count": 31
+      },
+      {
+        "town": "QUEENSTOWN",
+        "flat_type": "EXEC",
+        "median_rent": 3113,
+        "approval_count": 25
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "2-RM",
+        "median_rent": 2189,
+        "approval_count": 50
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "3-RM",
+        "median_rent": 2356,
+        "approval_count": 44
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "4-RM",
+        "median_rent": 2572,
+        "approval_count": 38
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "5-RM",
+        "median_rent": 2862,
+        "approval_count": 32
+      },
+      {
+        "town": "SEMBAWANG",
+        "flat_type": "EXEC",
+        "median_rent": 3127,
+        "approval_count": 26
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "2-RM",
+        "median_rent": 2273,
+        "approval_count": 51
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "3-RM",
+        "median_rent": 2440,
+        "approval_count": 45
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "4-RM",
+        "median_rent": 2703,
+        "approval_count": 39
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "5-RM",
+        "median_rent": 2815,
+        "approval_count": 33
+      },
+      {
+        "town": "SENGKANG",
+        "flat_type": "EXEC",
+        "median_rent": 3094,
+        "approval_count": 27
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "2-RM",
+        "median_rent": 2320,
+        "approval_count": 52
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "3-RM",
+        "median_rent": 2404,
+        "approval_count": 46
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "4-RM",
+        "median_rent": 2619,
+        "approval_count": 40
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "5-RM",
+        "median_rent": 2999,
+        "approval_count": 34
+      },
+      {
+        "town": "SERANGOON",
+        "flat_type": "EXEC",
+        "median_rent": 3080,
+        "approval_count": 28
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "2-RM",
+        "median_rent": 2239,
+        "approval_count": 53
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "3-RM",
+        "median_rent": 2444,
+        "approval_count": 47
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "4-RM",
+        "median_rent": 2807,
+        "approval_count": 41
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "5-RM",
+        "median_rent": 2854,
+        "approval_count": 35
+      },
+      {
+        "town": "TAMPINES",
+        "flat_type": "EXEC",
+        "median_rent": 3143,
+        "approval_count": 29
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "1-RM",
+        "median_rent": 2228,
+        "approval_count": 52
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "2-RM",
+        "median_rent": 2363,
+        "approval_count": 46
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "3-RM",
+        "median_rent": 2481,
+        "approval_count": 40
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "4-RM",
+        "median_rent": 2777,
+        "approval_count": 34
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "5-RM",
+        "median_rent": 3063,
+        "approval_count": 28
+      },
+      {
+        "town": "TOA PAYOH",
+        "flat_type": "EXEC",
+        "median_rent": 3218,
+        "approval_count": 22
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "2-RM",
+        "median_rent": 2321,
+        "approval_count": 47
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "3-RM",
+        "median_rent": 2531,
+        "approval_count": 41
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "4-RM",
+        "median_rent": 2766,
+        "approval_count": 35
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "5-RM",
+        "median_rent": 3077,
+        "approval_count": 29
+      },
+      {
+        "town": "WOODLANDS",
+        "flat_type": "EXEC",
+        "median_rent": 3295,
+        "approval_count": 23
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "1-RM",
+        "median_rent": null,
+        "approval_count": 0
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "2-RM",
+        "median_rent": 2508,
+        "approval_count": 48
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "3-RM",
+        "median_rent": 2570,
+        "approval_count": 42
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "4-RM",
+        "median_rent": 2820,
+        "approval_count": 36
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "5-RM",
+        "median_rent": 3136,
+        "approval_count": 30
+      },
+      {
+        "town": "YISHUN",
+        "flat_type": "EXEC",
+        "median_rent": 3278,
+        "approval_count": 24
+      }
+    ],
+    "town_names": [
+      "ANG MO KIO",
+      "BEDOK",
+      "BISHAN",
+      "BUKIT BATOK",
+      "BUKIT MERAH",
+      "BUKIT PANJANG",
+      "BUKIT TIMAH",
+      "CENTRAL AREA",
+      "CHOA CHU KANG",
+      "CLEMENTI",
+      "GEYLANG",
+      "HOUGANG",
+      "JURONG EAST",
+      "JURONG WEST",
+      "KALLANG/WHAMPOA",
+      "MARINE PARADE",
+      "PASIR RIS",
+      "PUNGGOL",
+      "QUEENSTOWN",
+      "SEMBAWANG",
+      "SENGKANG",
+      "SERANGOON",
+      "TAMPINES",
+      "TOA PAYOH",
+      "WOODLANDS",
+      "YISHUN"
+    ],
+    "flat_types": [
+      "1-RM",
+      "2-RM",
+      "3-RM",
+      "4-RM",
+      "5-RM",
+      "EXEC"
+    ]
+  }
+}

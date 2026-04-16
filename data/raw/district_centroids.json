@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "source": "OneMap Search API",
+    "count": 28
+  },
+  "records": [
+    {
+      "district": "01",
+      "district_name": "Boat Quay / Raffles Place / Marina",
+      "query": "Marina Bay",
+      "searchval": "MARINA BAY",
+      "latitude": 1.28541280453443,
+      "longitude": 103.856515136527,
+      "postal": "NIL"
+    },
+    {
+      "district": "02",
+      "district_name": "Chinatown / Tanjong Pagar",
+      "query": "Tanjong Pagar MRT",
+      "searchval": "TANJONG PAGAR MRT STATION (EW15)",
+      "latitude": 1.27656131737246,
+      "longitude": 103.845725186759,
+      "postal": "069119"
+    },
+    {
+      "district": "03",
+      "district_name": "Alexandra / Commonwealth",
+      "query": "Commonwealth MRT",
+      "searchval": "COMMONWEALTH MRT STATION (EW20)",
+      "latitude": 1.30250199924325,
+      "longitude": 103.798228523336,
+      "postal": "149735"
+    },
+    {
+      "district": "04",
+      "district_name": "Harbourfront / Telok Blangah",
+      "query": "HarbourFront MRT",
+      "searchval": "HARBOURFRONT MRT STATION",
+      "latitude": 1.26531139858465,
+      "longitude": 103.820557316696,
+      "postal": "NIL"
+    },
+    {
+      "district": "05",
+      "district_name": "Buona Vista / West Coast / Clementi New Town",
+      "query": "Clementi MRT",
+      "searchval": "CLEMENTI MRT STATION (EW23)",
+      "latitude": 1.31511625277378,
+      "longitude": 103.765191452888,
+      "postal": "129580"
+    },
+    {
+      "district": "06",
+      "district_name": "City Hall / Clarke Quay",
+      "query": "City Hall MRT",
+      "searchval": "CITY HALL MRT STATION",
+      "latitude": 1.29298990700923,
+      "longitude": 103.852542630339,
+      "postal": "NIL"
+    },
+    {
+      "district": "07",
+      "district_name": "Beach Road / Bugis / Rochor",
+      "query": "Bugis MRT",
+      "searchval": "BUGIS MRT STATION",
+      "latitude": 1.3004650853709,
+      "longitude": 103.855706731205,
+      "postal": "188045"
+    },
+    {
+      "district": "08",
+      "district_name": "Farrer Park / Serangoon Rd",
+      "query": "Farrer Park MRT",
+      "searchval": "FARRER PARK MRT STATION",
+      "latitude": 1.31314029963164,
+      "longitude": 103.854754721344,
+      "postal": "NIL"
+    },
+    {
+      "district": "09",
+      "district_name": "Orchard / River Valley",
+      "query": "Somerset MRT",
+      "searchval": "SOMERSET MRT STATION",
+      "latitude": 1.30025287710542,
+      "longitude": 103.839158336848,
+      "postal": "NIL"
+    },
+    {
+      "district": "10",
+      "district_name": "Ardmore / Bukit Timah / Holland Rd / Tanglin",
+      "query": "Botanic Gardens MRT",
+      "searchval": "BOTANIC GARDENS MRT STATION",
+      "latitude": 1.32238699517166,
+      "longitude": 103.815385463093,
+      "postal": "NIL"
+    },
+    {
+      "district": "11",
+      "district_name": "Watten Estate / Novena / Thomson",
+      "query": "Novena MRT",
+      "searchval": "NOVENA MRT STATION (NS20)",
+      "latitude": 1.32044079120154,
+      "longitude": 103.843825618748,
+      "postal": "307642"
+    },
+    {
+      "district": "12",
+      "district_name": "Balestier / Toa Payoh / Serangoon",
+      "query": "Toa Payoh MRT",
+      "searchval": "TOA PAYOH MRT STATION (NS19)",
+      "latitude": 1.33262928096888,
+      "longitude": 103.847502198048,
+      "postal": "319398"
+    },
+    {
+      "district": "13",
+      "district_name": "Macpherson / Potong Pasir",
+      "query": "MacPherson MRT",
+      "searchval": "MACPHERSON MRT STATION",
+      "latitude": 1.32683963232487,
+      "longitude": 103.890007860464,
+      "postal": "NIL"
+    },
+    {
+      "district": "14",
+      "district_name": "Eunos / Geylang / Paya Lebar",
+      "query": "Paya Lebar MRT",
+      "searchval": "PAYA LEBAR MRT STATION (CC9)",
+      "latitude": 1.3172473854035,
+      "longitude": 103.892260753884,
+      "postal": "409049"
+    },
+    {
+      "district": "15",
+      "district_name": "East Coast / Marine Parade",
+      "query": "Marine Parade MRT",
+      "searchval": "MARINE PARADE MRT STATION (TE26)",
+      "latitude": 1.30261163483383,
+      "longitude": 103.904983086812,
+      "postal": "449971"
+    },
+    {
+      "district": "16",
+      "district_name": "Bedok / Upper East Coast",
+      "query": "Bedok MRT",
+      "searchval": "BEDOK MRT STATION (EW5)",
+      "latitude": 1.32397996868158,
+      "longitude": 103.929984495066,
+      "postal": "467347"
+    },
+    {
+      "district": "17",
+      "district_name": "Changi Airport / Changi Village",
+      "query": "Changi Village",
+      "searchval": "CHANGI VILLAGE",
+      "latitude": 1.38870594064706,
+      "longitude": 103.987980185347,
+      "postal": "NIL"
+    },
+    {
+      "district": "18",
+      "district_name": "Pasir Ris / Tampines",
+      "query": "Tampines MRT",
+      "searchval": "TAMPINES EAST MRT STATION (DT33)",
+      "latitude": 1.35619148271544,
+      "longitude": 103.9546344625,
+      "postal": "529623"
+    },
+    {
+      "district": "19",
+      "district_name": "Hougang / Punggol / Sengkang",
+      "query": "Sengkang MRT",
+      "searchval": "SENGKANG MRT STATION (NE16)",
+      "latitude": 1.39169462601522,
+      "longitude": 103.895484694279,
+      "postal": "545062"
+    },
+    {
+      "district": "20",
+      "district_name": "Ang Mo Kio / Bishan / Thomson",
+      "query": "Bishan MRT",
+      "searchval": "BISHAN MRT STATION",
+      "latitude": 1.35101889777844,
+      "longitude": 103.850057208608,
+      "postal": "NIL"
+    },
+    {
+      "district": "21",
+      "district_name": "Clementi Park / Upper Bukit Timah",
+      "query": "Beauty World MRT",
+      "searchval": "BEAUTY WORLD MRT STATION",
+      "latitude": 1.34090149001429,
+      "longitude": 103.775746717778,
+      "postal": "NIL"
+    },
+    {
+      "district": "22",
+      "district_name": "Boon Lay / Jurong / Tuas",
+      "query": "Jurong East MRT",
+      "searchval": "JURONG EAST MRT STATION (EW24 / NS1)",
+      "latitude": 1.3330275154394,
+      "longitude": 103.742370487607,
+      "postal": "609690"
+    },
+    {
+      "district": "23",
+      "district_name": "Dairy Farm / Bukit Panjang / Choa Chu Kang",
+      "query": "Bukit Panjang MRT",
+      "searchval": "BUKIT PANJANG MRT STATION",
+      "latitude": 1.37956121236613,
+      "longitude": 103.761188866252,
+      "postal": "NIL"
+    },
+    {
+      "district": "24",
+      "district_name": "Lim Chu Kang / Tengah",
+      "query": "Tengah",
+      "searchval": "TENGAH AIR BASE",
+      "latitude": 1.37791194786997,
+      "longitude": 103.712569342884,
+      "postal": "699800"
+    },
+    {
+      "district": "25",
+      "district_name": "Kranji / Woodgrove",
+      "query": "Kranji MRT",
+      "searchval": "KRANJI MRT STATION (NS7)",
+      "latitude": 1.42508698073648,
+      "longitude": 103.762137459497,
+      "postal": "738702"
+    },
+    {
+      "district": "26",
+      "district_name": "Upper Thomson / Springleaf",
+      "query": "Upper Thomson MRT",
+      "searchval": "UPPER THOMSON MRT STATION (TE8)",
+      "latitude": 1.35441643365401,
+      "longitude": 103.832898468504,
+      "postal": "577937"
+    },
+    {
+      "district": "27",
+      "district_name": "Yishun / Sembawang",
+      "query": "Yishun MRT",
+      "searchval": "YISHUN MRT STATION (NS13)",
+      "latitude": 1.42944308477331,
+      "longitude": 103.835005047246,
+      "postal": "769093"
+    },
+    {
+      "district": "28",
+      "district_name": "Seletar / Yio Chu Kang",
+      "query": "Seletar Aerospace Park",
+      "searchval": "JTC AEROSPACE @ SELETAR AEROSPACE PARK",
+      "latitude": 1.40522351866274,
+      "longitude": 103.860029581106,
+      "postal": "NIL"
+    }
+  ]
+}
