@@ -16,8 +16,6 @@
 作者：
 - Sasya / https://github.com/SasyaTitech
 
-`nus_lease` 仍然是仓库和 Python 包的内部名称，面向公开展示时使用 `Lion City Rent Atlas` 这个名字。
-
 ## 这个网页能看什么
 
 当前网页分成两个视图：
