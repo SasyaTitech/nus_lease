@@ -846,6 +846,21 @@ function featureCenter(feature) {
   return [sumLon / vertices.length, sumLat / vertices.length];
 }
 
+function filterDistrictGeoJSON(districtGeoJSON, districtRows, metric) {
+  if (!districtGeoJSON?.features?.length) return null;
+  const visibleDistricts = new Set(
+    districtRows
+      .filter((row) => isFiniteNumber(row?.[metric]))
+      .map((row) => row.district),
+  );
+  const features = districtGeoJSON.features.filter((feature) => visibleDistricts.has(feature.properties?.district));
+  if (!features.length) return null;
+  return {
+    type: "FeatureCollection",
+    features,
+  };
+}
+
 function buildCondoMapOption(districtGeoJSON, districtPoints, districtRows, metric, listingAvailable) {
   if (!districtGeoJSON?.features?.length) {
     return {
@@ -859,9 +874,22 @@ function buildCondoMapOption(districtGeoJSON, districtPoints, districtRows, metr
     };
   }
 
-  const domain = metricDomain(metric, districtRows);
-  const rowMap = new Map(districtRows.map((row) => [row.district, row]));
-  const districtData = districtRows.map((row) => ({
+  const visibleRows = districtRows.filter((row) => isFiniteNumber(row?.[metric]));
+  if (!visibleRows.length) {
+    return {
+      title: {
+        text: "No map data for this filter",
+        left: "center",
+        top: "middle",
+        textStyle: { color: "#99b8b6", fontWeight: 400 },
+      },
+      backgroundColor: "transparent",
+    };
+  }
+
+  const domain = metricDomain(metric, visibleRows);
+  const rowMap = new Map(visibleRows.map((row) => [row.district, row]));
+  const districtData = visibleRows.map((row) => ({
     name: row.district,
     district: row.district,
     district_name: row.district_name,
@@ -881,7 +909,7 @@ function buildCondoMapOption(districtGeoJSON, districtPoints, districtRows, metr
     (districtGeoJSON.features || []).map((feature) => [feature.properties?.district, feature]),
   );
 
-  const scatterData = districtRows
+  const scatterData = visibleRows
     .filter((row) => rowMap.has(row.district))
     .map((row) => {
       const coordinate =
@@ -1243,14 +1271,18 @@ async function main() {
   function renderCondo() {
     const rows = getCondoRows(snapshot, state.condoBucket);
     const districtRows = getCondoDistrictComparison(rows, state.condoBucket, condoListingAvailable);
+    const visibleDistrictGeoJSON = filterDistrictGeoJSON(districtGeoJSON, districtRows, state.metric);
     const metricRows = state.condoBucket === "all"
       ? districtRows
       : filterReliableCondoRows(rows, condoListingAvailable);
     const totalDistrictCount = new Set((snapshot.condo?.districts || []).map((row) => row.district)).size;
     setChartHeights("condo", rows, districtRows);
     renderMetrics(condoMetrics(metricRows, condoListingAvailable, snapshot.meta, totalDistrictCount));
+    if (visibleDistrictGeoJSON?.features?.length) {
+      echarts.registerMap("sg-districts", visibleDistrictGeoJSON);
+    }
     contextChart.setOption(
-      buildCondoMapOption(districtGeoJSON, districtPoints, districtRows, state.metric, condoListingAvailable),
+      buildCondoMapOption(visibleDistrictGeoJSON, districtPoints, districtRows, state.metric, condoListingAvailable),
       true,
     );
     heatmapChart.setOption(buildCondoHeatmapOption(rows, state.metric, condoListingAvailable), true);
